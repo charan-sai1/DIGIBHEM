@@ -1,0 +1,322 @@
+:root {
+    --heading: #ffff; 
+    --primary: #BFBFBF; 
+    --second: #737373; 
+    --third: #404040; 
+    --inevrted:#0D0D0D;
+  }
+  ::-webkit-scrollbar{
+    width: 5px;
+    background-color: black;
+  }
+  ::-webkit-scrollbar-track{
+    width: 1px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background-color: var(--primary);
+    border-radius: 1px;
+  }
+  @import url("https://fonts.googleapis.com/css?family=Varela+Round");
+  html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 1.1px;
+  }
+
+ body{
+  overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+ }
+  .cont{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: black;
+  }
+  nav h1{
+    padding: 36px 10px;
+    color: var(--heading);
+    cursor: pointer;
+    filter: drop-shadow(10px 0 15px rgb(90, 90, 90));
+    font-family: OPTI Bodoni Antiqua;
+    font-weight: 50;
+    font-size:32px;
+  }
+
+  nav:hover {
+    box-shadow: 10px 0 50px  rgba(193, 193, 193, 0.204);
+    opacity: 0.8;
+}
+  nav {
+    position: fixed;
+    min-width: 150px;
+    transition: ease-in-out .6s;
+    opacity: 0.5;
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    align-items: center;
+    text-align: center;
+    font-family: "Varela Round", sans-serif;
+    height: 100%;
+    width: 15%;
+    background-color: var(--third); 
+    padding-top: 20px; 
+  }
+  nav button{
+    background-color: rgb(88, 8, 8);
+    cursor: pointer;
+    border-radius: 4px;
+    padding :10px 26px;
+    border: none;
+    font-size: 12px;
+    margin-top: 50px;
+    transition: ease-in-out .3s;
+    color: rgb(255, 255, 255);
+  }
+  nav button:hover{
+    background-color: rgb(157, 12, 12);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.11);
+    color: white;
+  }
+
+  .menu {
+    margin-top: 100px;
+    list-style: none;
+    font-family: "Varela Round", sans-serif;
+  }
+
+  .menu li {
+    margin: auto;
+    width: 125px;
+    height: 50px;
+    transition: background-position-x 0.9s linear;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .menu li a {
+    font-size: 16px;
+    color: var(--second);
+    text-decoration: none;
+    transition: ease 0.5s;
+    display: block; 
+  }
+
+  .menu li:hover {
+    color: var(--inevrted);
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+    animation: line 1.5s;
+  }
+
+  .menu li:hover a {
+    color: var(--primary);
+
+  }
+
+  @keyframes line {
+    0% {
+      background-position-x: 390px;
+    }
+  }
+.main{
+    margin-left: 15%;
+    color: var(--heading);
+    display: block;
+    width: 85%;
+    min-width: 856px;
+    height: max-content;
+}
+.title p{
+    font-family: inter;
+    font-weight: 100;
+    margin: auto;
+    transform: translateX(15%);
+}
+.title {
+    animation-delay: 10s, 10s;
+    animation: textAnimation 3s 1, textSizeChange 3s 1;
+    margin: 20% auto;
+    font-size: 64px;
+    width: fit-content;
+    padding: 36px 10px;
+    color: var(--heading);
+    font-family: OPTI Bodoni Antiqua;
+    font-weight: 100;
+}
+
+
+@keyframes textAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: rotateX(180deg);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes textSizeChange {
+    0% {
+        font-size: 64px;
+    }
+    50% {
+        font-size: 71px;
+    }
+    100% {
+        font-size: 64px;
+    }
+}
+
+.scroll{
+    animation: blink 3s infinite;
+    margin:3.5% 49%;
+    width:24px;
+    filter: invert();
+    cursor: pointer;
+    transition: ease-in-out;
+}
+@keyframes blink {
+    0%{
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.2;
+    }
+}
+.gallery-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    margin: auto;
+    margin-bottom:50px;
+    height: 70vh;
+  }
+  
+  .item {
+    flex: 1;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+    transition: flex 0.8s ease;
+    
+    &:hover{
+      flex: 7;
+    }
+  }
+  
+  .item-1 { 
+    border: 5px solid black;
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/884/931/791/furniture-room-design-interior-wallpaper-preview.jpg');
+
+  }
+  
+  .item-2 { 
+    border: 5px solid black;
+    background-image: url('https://c1.wallpaperflare.com/preview/572/985/277/hotel-neon-light-red.jpg');
+
+  }
+  
+  .item-3 { 
+    border: 5px solid black;
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/765/317/195/room-bed-design-interior-wallpaper-preview.jpg');
+  }
+  
+  .item-4 { 
+    border: 5px solid black;
+    background-image: url('https://images.unsplash.com/photo-1603384596556-78e66c81c91b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJlZCUyMHJvb218ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60');
+  }
+  
+  .item-5 { 
+    border: 5px solid black;
+    background-image: url('https://c4.wallpaperflare.com/wallpaper/626/526/372/best-hotels-of-2015-resort-red-south-beach-hotel-travel-wallpaper-preview.jpg');
+  }
+  .pricing{
+    margin-bottom: 30px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .card{
+    font-family: inter;
+    border-radius:4px ;
+    padding: 1%;
+    margin: 10px 50px;
+    width: 30%;
+    height: auto;
+    transition: ease .3s;
+    background:linear-gradient(to right bottom,rgb(45, 45, 45),black);
+  }
+  .card:hover{
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  .cards{
+    justify-content: space-around;
+    display: flex;
+  }
+  .Plans
+  {
+    margin: 5px auto;
+    font-size: 64px;
+    width: fit-content;
+    padding: 36px 10px;
+    color: var(--heading);
+    font-family: OPTI Bodoni Antiqua;
+    font-weight: 100;
+  }
+  .priceImage img{
+    width: 100%;
+    filter: brightness(80%);
+  }
+  .pricingText {
+    padding-bottom: 0px;
+    padding: 10px;
+  }
+  .pricingText h1{
+    padding-top: 5px;
+  }
+  .pricingText h2{
+    padding-top: 20px;
+  }
+  .pricingText p{
+    font-size: 12px;
+  }
+  .pricingText li{
+    font-weight: 100;
+    list-style: none;
+    font-size: 12px;
+  }
+  .pricingText button{
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-color: var(--second);
+    color: var(--inevrted);
+    padding: 10px 36px;
+    border-radius: 8px;
+    margin-left: 37%;
+    cursor: pointer;
+    border: none;
+    transition: ease-in-out .3s;
+  }
+  .pricingText button:hover{
+    background-color: rgb(88, 8, 8);
+    color: var(--heading);
+  }

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel DeAlphabet/Booking</title>
+    <link rel="stylesheet" href="details.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,500;0,700;1,100;1,300&family=Inter:wght@100;200;300;400&family=Jaldi:wght@400;700&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</head>
+<body style="background-color: black;color: white;font-family: OPTI Bodoni Antiqua;">
+    <div class="cont">
+        <nav>
+            <h1 style="color:var(--heading);cursor:default;">DeAlphabet</h1>
+            <ul class="menu">
+              <li><a href="index.html#main">Home</a></li>
+              <li><a href="#index.html#pricing">Pricing</a></li>
+              <li><a href="display.html">My Bookings</a></li>
+              <li><a href="details.html">My Bookings</a></li>
+              <li><a href="#!">About us</a></li>
+            </ul>
+            <button onclick="window.location.href = 'index.html#pricing'">Pricing</button>
+        </nav>
+        <div class="main" style="font-family: inter;">
+            <h1>Booking Form</h1>
+            <div class="container">
+                <form id="bookingForm" action="display.html">
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                        <label for="name" class="form__label">Name</label>
+                    </div>
+                    <div class="form__group field">
+                        <input  id="Mobile Number" type="number"  maxlength="10" class="form__field" placeholder="Mobile Number" name="mobile"/>
+                        <label for="Mobile Number" class="form__label">Mobile Number</label>
+                    </div>
+                    <div class="form__group field">
+                        <input  id="Date" type="date" class="form__field" placeholder="Check In" name="check In"/>
+                        <label for="checkin" class="form__label">Check In</label>
+                    </div>
+                    <div class="form__group field">
+                        <input  id="Advance" type="number"  class="form__field" placeholder="Advance Paid" name="Advance"/>
+                        <label for="Advance" class="form__label">Advance Paid</label>
+                    </div>
+                    <div class="num-selector">
+                        <label for="numberInputRooms">No. of rooms:</label><br>
+                        <button type="button" onclick="changeValue('minus','numberInputRooms')">-</button>
+                        <input type="number" id="numberInputRooms" value="1" min="1" >
+                        <button type="button" onclick="changeValue('plus','numberInputRooms')">+</button>
+                    </div>
+                    <div class="num-selector">
+                        <label for="numberInputPeople">Additional people: <p style="font-size: 12px;">(if any)</p></label><br>
+                        <button type="button" onclick="changeValue('minus','numberInputPeople')">-</button>
+                        <input type="number" id="numberInputPeople" value="1" min="1" >
+                        <button type="button" onclick="changeValue('plus','numberInputPeople')">+</button>
+                    </div>
+                    <div class="num-selector">
+                        <label for="numberInputNight">No. of Nights:</label><br>
+                        <button type="button" onclick="changeValue('minus','numberInputNight')">-</button>
+                        <input type="number" id="numberInputNight" value="1" min="1" >
+                        <button type="button" onclick="changeValue('plus','numberInputNight')">+</button>
+                    </div>
+                    <div class="anamilities">
+                        <div class="ac">
+                            <label for="AC">Air Conditioner <p style="font-size: 12px;">(Rs.1000)</p></label>
+                            <input type="checkbox" name="AC" id="AC"><br>
+                        </div>
+                        <div class="locker">
+                            <label for="Locker">Locker <p style="font-size: 12px;">(Rs.300)</p></label>
+                            <input type="checkbox" name="Locker" id="Locker">
+                        </div>
+                    </div>
+                    <div class="anamilities" id="rooms">
+                        <div class="room-option">
+                            <label for="deluxe">
+                                <input type="radio" name="room" id="deluxe"> Deluxe Room
+                                <p style="font-size: 12px;">(Rs.2500)</p>
+                            </label>
+                        </div>
+                        <div class="room-option">
+                            <label for="suite">
+                                <input type="radio" name="room" id="suite"> Suite Room
+                                <p style="font-size: 12px;">(Rs.5000)</p>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button id="submit" type="submit">Check Out</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.getElementById("bookingForm");
+        
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the form from actually submitting
+        
+                // Capture form data
+                const formData = {
+                    name: document.getElementById("name").value,
+                    mobile: document.getElementById("Mobile Number").value,
+                    checkIn: document.getElementById("Date").value,
+                    advancePaid: document.getElementById("Advance").value,
+                    rooms: document.getElementById("numberInputRooms").value,
+                    people: document.getElementById("numberInputPeople").value,
+                    nights: document.getElementById("numberInputNight").value,
+                    ac: document.getElementById("AC").checked,
+                    locker: document.getElementById("Locker").checked,
+                    roomType: document.querySelector('input[name="room"]:checked') ? document.querySelector('input[name="room"]:checked').id : ""
+                };
+        
+                // Store the form data in localStorage
+                localStorage.setItem("bookingData", JSON.stringify(formData));
+        
+                // Redirect to display.html
+                window.location.href = "display.html";
+            });
+        });
+        </script>        
+</body>
+</html>

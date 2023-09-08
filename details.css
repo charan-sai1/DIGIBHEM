@@ -1,0 +1,292 @@
+.container{
+    width: 90%;
+    height: 400px;
+    margin:50px auto;
+    margin-left: 15%;
+}
+.container form{
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Define your variables */
+:root {
+    --primary: #11998e;
+    --secondary: #e1e1e1;
+    --white: #fff;
+    --gray: #9b9b9b;
+}
+
+/* Styles for .form__group */
+.form__group {
+    font-family: inter;
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 50%;
+}
+
+/* Styles for .form__field */
+.form__field {
+    flex: 1;
+    font-family: inherit;
+    width: 50%;
+    border: 0;
+    border-bottom: 2px solid var(--gray);
+    outline: 0;
+    font-size: 1.3rem;
+    color: var(--white);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+/* Styles for .form__label */
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--gray);
+    user-select: none;
+}
+
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: 00;
+    
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--primary), var(--secondary));
+    border-image-slice: 1;
+}
+
+/* Reset input styles */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+.form__group{
+    margin-top: 35px;
+}
+.num-selector{
+    font-family: inter;
+    width: 50%;
+    margin-top: 35px;   
+    margin-bottom: 0;
+}
+.num-selector input{
+    background-color: transparent;
+    color: var(--primary);
+    border: none;
+    min-width: 20px;
+    width: 20%;
+    text-align: center;
+    font-size: 20px;
+    padding: 0;
+    appearance: textfield;
+    margin: 0;
+    padding: 4px 15px;
+
+}
+.num-selector input:focus{
+    border: none;
+}
+.num-selector button:hover{
+    background-color: white;
+}
+.num-selector button{
+    margin: 10px 0;
+    background-color: rgb(146, 146, 146);
+    transition: ease .3s;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* Styles for date picker */
+.form__group #Date {
+    cursor: pointer;
+    font-weight: 300;
+    font-family: inherit;
+    width: 50%;
+    border: 0;
+    border-bottom: 2px solid var(--gray);
+    outline: 0;
+    font-size: 1.3rem;
+    color: var(--white);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__group #Date::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border: 50px;
+    filter: invert(); /* Invert the colors to make it dark-themed */
+}
+
+/* Styles for date picker placeholder */
+.form__group #Date::placeholder {
+    color: transparent;
+}
+
+/* Styles for date picker label */
+.form__group label[for="Date"] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--gray);
+    user-select: none;
+}
+
+.form__group #Date:focus ~ label[for="Date"] {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.form__group #Date:focus {
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--primary), var(--secondary));
+    border-image-slice: 1;
+}
+
+/* Reset input styles */
+.form__group #Date:required, .form__group #Date:invalid {
+    box-shadow: none;
+}
+
+.main h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+.anamilities{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+}
+.ac 
+{
+    width: 50%;
+    display: flex;
+}
+.ac input{
+    cursor: pointer;
+    width: 15%;
+}
+.locker{
+    width: 50%;
+    display: flex;
+}
+.locker input{ 
+    width: 15%;
+    margin-left: 15px;
+    cursor: pointer;
+}
+#submit:hover{
+    background-color: rgb(157, 12, 12);
+}
+#submit{
+    transition: ease-in-out .3s;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(88, 8, 8);
+    padding: 10px 36px;
+  }
+
+
+.room-option {
+    width: 50%;
+    display: flex;
+    align-items: center; /* Align text vertically in the middle */
+}
+
+.room-option label {
+    color: rgb(193, 193, 193);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.room-option input[type="radio"] {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Style for selected option */
+.room-option input[type="radio"]:checked + label {
+    font-weight: bold; /* Apply bold font for the selected option */
+    color: var(--primary); /* Change color for the selected option */
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.main h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+.anamilities{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+}
+.ac 
+{
+    width: 50%;
+    display: flex;
+}
+.ac input{
+    cursor: pointer;
+    width: 15%;
+}
+.locker{
+    width: 50%;
+    display: flex;
+}
+.locker input{ 
+    width: 15%;
+    margin-left: 15px;
+    cursor: pointer;
+}

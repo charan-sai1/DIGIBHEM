@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel DeAlphabet</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,500;0,700;1,100;1,300&family=Inter:wght@100;200;300;400&family=Jaldi:wght@400;700&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body style="background-color: black;color: white;font-family: OPTI Bodoni Antiqua;">
+    <div class="cont">
+        <nav>
+            <h1 style="opacity: 0; cursor:default;">DeAlphabet</h1>
+            <ul class="menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="display.html">My Bookings</a></li>
+              <li><a href="#!">About us</a></li>
+            </ul>
+            <button onclick='window.location.href = "details.html"'>Book Now</button>
+        </nav>
+        <div class="main" id="main">
+            <h1 class="title">DeAlphabet <p style="font-size: 12px;">Discover the Art of Relaxation in Every Letter of Comfort</p></h1>
+            <img class="scroll" src="icons8-scroll-50.png" alt="Scroll to gallery" href="#pricing">
+            <div class="gallery-wrap" id="gallery">
+                <div class="item item-1"></div>
+                <div class="item item-2"></div>
+                <div class="item item-3"></div>
+                <div class="item item-4"></div>
+                <div class="item item-5"></div>
+            </div>
+            <div class="pricing" id="pricing">
+                <h1 class="Plans">Plans</h1>
+                <div class="cards">
+                    <div class="card">
+                        <div class="priceImage">
+                            <img src="https://images.unsplash.com/photo-1612320583354-02dd0cf04612?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"  alt="">
+                        </div>
+                        <div class="pricingText">
+                            <p>Basic Plan</p>
+                            <h1>Deluxe Room</h1>
+                            <ul>
+                                <li>Breakfast</li>
+                                <li>Wi-Fi</li>
+                                <li>Toiletries</li>
+                                <li>24/7 Room Service</li>
+                                <li>Mini-Bar</li>
+                                <li>Access to Gym/Pool</li>
+                                <li>Business Center Access</li>
+                                <li>Concierge Service</li>
+                                <h2 style="display: flex;">&#8377; 2500<p style="margin:6px 5px;font-size: 12px;">(gst included)</p></h2>
+                            </ul>      
+                            <button onclick="window.location.href = 'details.html'" id="book">Book</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="priceImage">
+                            <img src="https://www.kimptonhotels.com/blog/wp-content/uploads/2015/09/rouge-room.jpg"  alt="">
+                        </div>
+                        <div class="pricingText">
+                            <p>Premium Plan</p>
+                            <h1>Suite Room</h1>
+                            <ul>
+                                <li>Breakfast</li>
+                                <li>Wi-Fi</li>
+                                <li>Toiletries</li>
+                                <li>24/7 Room Service</li>
+                                <li>Mini-Bar</li>
+                                <li>Access to Gym/Pool</li>
+                                <li>Business Center Access</li>
+                                <li>Concierge Service</li>
+                                <h2 style="display: flex;">&#8377; 5000<p style="margin:6px 5px;font-size: 12px;">(gst included)</p></h2>
+                            </ul>      
+                            <button onclick="window.location.href = 'details.html'" id="book">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to("nav h1", {
+            // Your animation properties here
+        });
+    </script>
+</body>
+</html>
