@@ -230,6 +230,9 @@ input[type="number"]::-webkit-outer-spin-button {
     cursor: pointer;
     background-color: rgb(88, 8, 8);
     padding: 10px 36px;
+    margin-top: 30px ;
+    margin-bottom: 30px ;
+    margin-right: 300px ;
   }
 
 

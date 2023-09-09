@@ -28,6 +28,12 @@
         </nav>
     </div>
     <div class="main" id="main">
+        <style>
+            h1{
+                font-family: OPTI Bodoni Antiqua;
+                font-weight: 100;
+            }
+        </style>
         <div class="gcard">
             <div class="container">
                 <h1>Checkout Details</h1>
@@ -45,17 +51,69 @@
             if (storedData) {
                 const bookingDetails = document.getElementById("bookingDetails");
                 bookingDetails.innerHTML = `
-                    <p><strong>Name:</strong> ${storedData.name}</p>
-                    <p><strong>Mobile Number:</strong> ${storedData.mobile}</p>
-                    <p><strong>Check In:</strong> ${storedData.checkIn}</p>
-                    <p><strong>Advance Paid:</strong> ${storedData.advancePaid}</p>
-                    <p><strong>No. of Rooms:</strong> ${storedData.rooms}</p>
-                    <p><strong>Additional People:</strong> ${storedData.people}</p>
-                    <p><strong>No. of Nights:</strong> ${storedData.nights}</p>
-                    <p><strong>AC:</strong> ${storedData.ac ? 'Yes' : 'No'}</p>
-                    <p><strong>Locker:</strong> ${storedData.locker ? 'Yes' : 'No'}</p>
-                    <p><strong>Room Type:</strong> ${storedData.roomType}</p>
-                    <button type="submit">Make Payment</button>
+                <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        table, th, td {
+            border-bottom: .5px solid rgba(127, 127, 127, 0.264);
+        }
+        
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+
+    </style>
+    <table>
+        <tr>
+            <td><strong>Name:</strong></td>
+            <td>${storedData.name}</td>
+        </tr>
+        <tr>
+            <td><strong>Mobile Number:</strong></td>
+            <td>${storedData.mobile}</td>
+        </tr>
+        <tr>
+            <td><strong>Check In:</strong></td>
+            <td>${storedData.checkIn}</td>
+        </tr>
+        <!-- Add more rows for the remaining fields -->
+    </table>
+    <br>
+    <h2>Payment Summary</h2>
+    <table>
+        <tr>
+            <th class="header">Description</th>
+            <th class="header">Cost</th>
+        </tr>
+        <tr>
+            <td><strong>Room Cost:</strong></td>
+            <td>${storedData.roomCost}</td>
+        </tr>
+        <tr>
+            <td><strong>Amenities Cost:</strong></td>
+            <td>${storedData.amenitiesCost}</td>
+        </tr>
+        <tr>
+            <td><strong>Total Cost:</strong></td>
+            <td>${storedData.totalCost}</td>
+        </tr>
+        <tr>
+            <td><strong>Advance Paid:</strong></td>
+            <td>${storedData.advancePaid}</td>
+        </tr>
+        <tr>
+            <td><strong>Outstanding Amount:</strong></td>
+            <td>${storedData.outstandingCost}</td>
+        </tr>
+    </table>
+    <div class="button-container">
+        <button type="submit">Make Payment</button>
+    </div>
                 `;
             }
         });

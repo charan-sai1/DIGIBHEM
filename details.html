@@ -56,7 +56,7 @@
                     <div class="num-selector">
                         <label for="numberInputPeople">Additional people: <p style="font-size: 12px;">(if any)</p></label><br>
                         <button type="button" onclick="changeValue('minus','numberInputPeople')">-</button>
-                        <input type="number" id="numberInputPeople" value="1" min="1" >
+                        <input type="number" id="numberInputPeople" value="0" min="0" >
                         <button type="button" onclick="changeValue('plus','numberInputPeople')">+</button>
                     </div>
                     <div class="num-selector">
@@ -103,19 +103,57 @@
                 event.preventDefault(); // Prevent the form from actually submitting
         
                 // Capture form data
+                const DELUX_ROOM_RATE = 2500;
+                const SUITE_ROOM_RATE = 4000;
+                const AC_COST = 1000;
+                const LOCKER_COST = 300;
+                const EXTRA_PERSON_COST_PER_DAY = 1000;
+                            
+                // Get the form data
                 const formData = {
                     name: document.getElementById("name").value,
                     mobile: document.getElementById("Mobile Number").value,
-                    checkIn: document.getElementById("Date").value,
-                    advancePaid: document.getElementById("Advance").value,
-                    rooms: document.getElementById("numberInputRooms").value,
-                    people: document.getElementById("numberInputPeople").value,
-                    nights: document.getElementById("numberInputNight").value,
+                    checkIn: new Date(document.getElementById("Date").value), // Convert date input to Date object
+                    advancePaid: parseFloat(document.getElementById("Advance").value), // Convert advance to a number
+                    rooms: parseInt(document.getElementById("numberInputRooms").value), // Convert rooms to an integer
+                    people: parseInt(document.getElementById("numberInputPeople").value), // Convert people to an integer
+                    nights: parseInt(document.getElementById("numberInputNight").value), // Convert nights to an integer
                     ac: document.getElementById("AC").checked,
                     locker: document.getElementById("Locker").checked,
                     roomType: document.querySelector('input[name="room"]:checked') ? document.querySelector('input[name="room"]:checked').id : ""
                 };
-        
+                
+                // Calculate room cost based on room type
+                let roomCost = 0;
+                if (formData.roomType === "deluxe") {
+                    roomCost = DELUX_ROOM_RATE * formData.nights * formData.rooms;
+                } else if (formData.roomType === "suite") {
+                    roomCost = SUITE_ROOM_RATE * formData.nights * formData.rooms;
+                }
+                
+                // Calculate amenities cost based on AC and locker selection
+                let amenitiesCost = 0;
+                if (formData.ac) {
+                    amenitiesCost += AC_COST * formData.nights * formData.rooms;
+                }
+                if (formData.locker) {
+                    amenitiesCost += LOCKER_COST * formData.rooms* formData.nights;
+                }
+                
+                // Calculate total room cost and total amenities cost
+                const totalRoomCost = roomCost;
+                const totalAmenitiesCost = amenitiesCost;
+                
+                // Calculate total cost
+                const totalCost = totalRoomCost + totalAmenitiesCost;
+                
+                // Calculate balance amount
+                const balanceAmount = totalCost - formData.advancePaid;
+                
+                formData.totalCost = totalCost;
+                formData.outstandingCost = balanceAmount;
+                formData.roomCost = roomCost;
+                formData.amenitiesCost = amenitiesCost;
                 // Store the form data in localStorage
                 localStorage.setItem("bookingData", JSON.stringify(formData));
         
